@@ -1,0 +1,31 @@
+// Add to ContentObject, Article or Block JSON
+
+"_background": {
+  "_isEnabled": true,
+  "_color": "#000",
+  "_image": {
+    "_isEnabled": true,
+    "_position": "top",
+    "_size": "auto",
+    "_repeat": "no-repeat",
+    "_attachment": "scroll",
+    "_opacity": 1,
+    "_largeSrc": "",
+    "largeAlt": "",
+    "_mediumSrc": "",
+    "mediumAlt": "",
+    "_smallSrc": "",
+    "smallAlt": ""
+  },
+  "_gradient": {
+    "_isEnabled": true,
+    "_type": "Left to Right", // Options are "Bottom Left to Top Right" "Left to Right" "Top Left to Bottom Right" "Top to Bottom" "Radial" "Radial Top" "Radial Bottom" "Radial Left" "Radial Right"
+    "_colors": "#051937, #004d7a, #008793, #00bf72, #a8eb12"
+  },
+  "_video": {
+    "_isEnabled": false,
+    "_loopEnabled": false,
+    "_disableOnMobile": true,
+    "_src": ""
+  }
+}

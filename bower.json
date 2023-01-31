@@ -1,0 +1,17 @@
+{
+  "name": "adapt-background",
+  "version": "1.0.0",
+  "framework": ">=5.19.1",
+  "homepage": "https://github.com/RobertPeek/adapt-background",
+  "issues": "https://github.com/RobertPeek/adapt-background/issues",
+  "displayName" : "Background",
+  "extension" : "background",
+  "description": "An extension that allows an image, gradient or video to be used as a background to a page, menu, article or block.",
+  "main": "/js/adapt-background.js",
+  "keywords": [
+    "adapt-plugin",
+    "adapt-extension"
+  ],
+  "license": "GPL-3.0",
+  "targetAttribute": "_background"
+}

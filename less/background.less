@@ -1,0 +1,44 @@
+.background-video {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  .l-container-responsive(@max-width);
+  overflow: hidden;
+
+  &.is-hidden {
+    display: none;
+  }
+
+  video {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.background-is-enabled {
+  .page__inner,
+  .article__inner,
+  .block__inner {
+    position: relative;
+  }
+
+  &.menu {
+    overflow: hidden;
+
+    .menu__inner {
+      position: relative;
+    }
+  }
+
+  .background-image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    .l-container-responsive(@max-width);
+  }
+}

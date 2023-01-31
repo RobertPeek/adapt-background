@@ -1,0 +1,671 @@
+{
+  "type": "object",
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "id": "http://jsonschema.net",
+  "required": false,
+  "properties": {
+    "pluginLocations": {
+      "type": "object",
+      "required": true,
+      "properties": {
+        "config": {
+          "type": "object"
+        },
+        "course": {
+          "type": "object"
+        },
+        "contentobject": {
+          "type": "object",
+          "properties": {
+            "_background": {
+              "type": "object",
+              "required": false,
+              "legend": "Background",
+              "properties": {
+                "_isEnabled": {
+                  "type": "boolean",
+                  "required": true,
+                  "default": false,
+                  "title": "Is Enabled",
+                  "inputType": "Checkbox",
+                  "validators": [],
+                  "help": "Controls whether the Background extension is enabled or disabled."
+                },
+                "_color": {
+                  "type": "string",
+                  "required": false,
+                  "default": "#fff",
+                  "title": "Background Colour",
+                  "inputType": "ColourPicker",
+                  "validators": []
+                },
+                "_image": {
+                  "type": "object",
+                  "legend": "Image",
+                  "required": false,
+                  "properties": {
+                    "_isEnabled": {
+                      "type": "boolean",
+                      "required": false,
+                      "default": false,
+                      "title": "Is Enabled",
+                      "inputType": "Checkbox",
+                      "validators": []
+                    },
+                    "_position": {
+                      "type": "string",
+                      "required": true,
+                      "default": "top",
+                      "title": "CSS Position Property",
+                      "inputType": {"type": "Select", "options": ["top", "bottom", "center", "left top", "left center", "left bottom", "right top", "right center", "right bottom", "center top", "center center", "center bottom"]},
+                      "validators": [],
+                      "help": "Set the position of the graphic with the pre-defined CSS styles."
+                    },
+                    "_size": {
+                      "type": "string",
+                      "required": true,
+                      "default": "auto",
+                      "title": "CSS Size Property",
+                      "inputType": {"type": "Select", "options": ["auto", "cover"]},
+                      "validators": [],
+                      "help": "Set the size of the graphic with the pre-defined CSS styles."
+                    },
+                    "_repeat": {
+                      "type": "string",
+                      "required": true,
+                      "default": "no-repeat",
+                      "title": "CSS Repeat Property",
+                      "inputType": {"type": "Select", "options": ["no-repeat", "repeat"]},
+                      "validators": [],
+                      "help": "Set the repeat property of the graphic with the pre-defined CSS styles."
+                    },
+                    "_attachment": {
+                      "type": "string",
+                      "required": true,
+                      "default": "scroll",
+                      "title": "CSS Attachement Property",
+                      "inputType": {"type": "Select", "options": ["scroll", "fixed"]},
+                      "validators": [],
+                      "help": "Set the attachment property of the graphic with the pre-defined CSS styles."
+                    },
+                    "_opacity": {
+                      "type": "number",
+                      "required": true,
+                      "default": 1,
+                      "title": "Opacity",
+                      "inputType": {"type": "Select", "options": [1, 0.9, 0.8, 0.7, 0.6, 0.5, 0.4, 0.3, 0.2, 0.1]},
+                      "validators": ["number"]
+                    },
+                    "_largeSrc": {
+                      "type": "string",
+                      "required": false,
+                      "default": "",
+                      "title": "Large Graphic",
+                      "inputType": "Asset:image",
+                      "validators": [],
+                      "help": "The large sized image for desktop devices."
+                    },
+                    "largeAlt": {
+                      "type": "string",
+                      "required": false,
+                      "default": "",
+                      "title": "Large Alt text",
+                      "inputType": "Text",
+                      "validators": [],
+                      "help": "Alternative text for the large sized graphic.",
+                      "translatable": true
+                    },
+                    "_mediumSrc": {
+                      "type": "string",
+                      "required": false,
+                      "default": "",
+                      "title": "Medium Graphic",
+                      "inputType": "Asset:image",
+                      "validators": [],
+                      "help": "The medium sized image for tablet devices."
+                    },
+                    "mediumAlt": {
+                      "type": "string",
+                      "required": false,
+                      "default": "",
+                      "title": "Medium Alt text",
+                      "inputType": "Text",
+                      "validators": [],
+                      "help": "Alternative text for the medium sized graphic.",
+                      "translatable": true
+                    },
+                    "_smallSrc": {
+                      "type": "string",
+                      "required": false,
+                      "default": "",
+                      "title": "Small Graphic",
+                      "inputType": "Asset:image",
+                      "validators": [],
+                      "help": "The small sized image for mobile devices."
+                    },
+                    "smallAlt": {
+                      "type": "string",
+                      "required": false,
+                      "default": "",
+                      "title": "Small Alt text",
+                      "inputType": "Text",
+                      "validators": [],
+                      "help": "Alternative text for the small sized graphic.",
+                      "translatable": true
+                    }
+                  }
+                },
+                "_gradient": {
+                  "type": "object",
+                  "legend": "Gradient",
+                  "required": false,
+                  "properties": {
+                    "_isEnabled": {
+                      "type": "boolean",
+                      "required": false,
+                      "default": false,
+                      "title": "Is Enabled",
+                      "inputType": "Checkbox",
+                      "validators": []
+                    },
+                    "_type": {
+                      "type": "string",
+                      "required": false,
+                      "default": "Top to Bottom",
+                      "title": "Type",
+                      "inputType": {"type": "Select", "options": ["Bottom Left to Top Right", "Left to Right", "Top Left to Bottom Right", "Top to Bottom", "Radial", "Radial Top", "Radial Bottom", "Radial Left", "Radial Right"]},
+                      "validators": []
+                    },
+                    "_colors": {
+                      "type": "string",
+                      "required": false,
+                      "default": "#cccccc, #333333",
+                      "title": "Colours",
+                      "inputType": "Text",
+                      "validators": [],
+                      "help": "Use a comma separated list of Hex Color Codes, e.g. #cccccc, #333333"
+                    }
+                  }
+                },
+                "_video": {
+                  "type": "object",
+                  "legend": "Video",
+                  "required": false,
+                  "properties": {
+                    "_isEnabled": {
+                      "type": "boolean",
+                      "required": false,
+                      "default": false,
+                      "title": "Is Enabled",
+                      "inputType": "Checkbox",
+                      "validators": []
+                    },
+                    "_loopEnabled": {
+                      "type": "boolean",
+                      "required": false,
+                      "default": false,
+                      "title": "Loop Video",
+                      "inputType": "Checkbox",
+                      "validators": []
+                    },
+                    "_disableOnMobile": {
+                      "type": "boolean",
+                      "required": false,
+                      "default": false,
+                      "title": "Disable on Mobile",
+                      "inputType": "Checkbox",
+                      "validators": []
+                    },
+                    "_src": {
+                      "type": "string",
+                      "required": false,
+                      "default": "",
+                      "title": "Video Asset",
+                      "inputType": "Asset:video",
+                      "validators": []
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "article": {
+          "type": "object",
+          "properties": {
+            "_background": {
+              "type": "object",
+              "required": false,
+              "legend": "Background",
+              "properties": {
+                "_isEnabled": {
+                  "type": "boolean",
+                  "required": true,
+                  "default": false,
+                  "title": "Is Enabled",
+                  "inputType": "Checkbox",
+                  "validators": [],
+                  "help": "Controls whether the Background extension is enabled or disabled."
+                },
+                "_color": {
+                  "type": "string",
+                  "required": false,
+                  "default": "#fff",
+                  "title": "Background Colour",
+                  "inputType": "ColourPicker",
+                  "validators": []
+                },
+                "_image": {
+                  "type": "object",
+                  "legend": "Image",
+                  "required": false,
+                  "properties": {
+                    "_isEnabled": {
+                      "type": "boolean",
+                      "required": false,
+                      "default": false,
+                      "title": "Is Enabled",
+                      "inputType": "Checkbox",
+                      "validators": []
+                    },
+                    "_position": {
+                      "type": "string",
+                      "required": true,
+                      "default": "top",
+                      "title": "CSS Position Property",
+                      "inputType": {"type": "Select", "options": ["top", "bottom", "center", "left top", "left center", "left bottom", "right top", "right center", "right bottom", "center top", "center center", "center bottom"]},
+                      "validators": [],
+                      "help": "Set the position of the graphic with the pre-defined CSS styles."
+                    },
+                    "_size": {
+                      "type": "string",
+                      "required": true,
+                      "default": "auto",
+                      "title": "CSS Size Property",
+                      "inputType": {"type": "Select", "options": ["auto", "cover"]},
+                      "validators": [],
+                      "help": "Set the size of the graphic with the pre-defined CSS styles."
+                    },
+                    "_repeat": {
+                      "type": "string",
+                      "required": true,
+                      "default": "no-repeat",
+                      "title": "CSS Repeat Property",
+                      "inputType": {"type": "Select", "options": ["no-repeat", "repeat"]},
+                      "validators": [],
+                      "help": "Set the repeat property of the graphic with the pre-defined CSS styles."
+                    },
+                    "_attachment": {
+                      "type": "string",
+                      "required": true,
+                      "default": "scroll",
+                      "title": "CSS Attachement Property",
+                      "inputType": {"type": "Select", "options": ["scroll", "fixed"]},
+                      "validators": [],
+                      "help": "Set the attachment property of the graphic with the pre-defined CSS styles."
+                    },
+                    "_opacity": {
+                      "type": "number",
+                      "required": true,
+                      "default": 1,
+                      "title": "Opacity",
+                      "inputType": {"type": "Select", "options": [1, 0.9, 0.8, 0.7, 0.6, 0.5, 0.4, 0.3, 0.2, 0.1]},
+                      "validators": ["number"]
+                    },
+                    "_largeSrc": {
+                      "type": "string",
+                      "required": false,
+                      "default": "",
+                      "title": "Large Graphic",
+                      "inputType": "Asset:image",
+                      "validators": [],
+                      "help": "The large sized image for desktop devices."
+                    },
+                    "largeAlt": {
+                      "type": "string",
+                      "required": false,
+                      "default": "",
+                      "title": "Large Alt text",
+                      "inputType": "Text",
+                      "validators": [],
+                      "help": "Alternative text for the large sized graphic.",
+                      "translatable": true
+                    },
+                    "_mediumSrc": {
+                      "type": "string",
+                      "required": false,
+                      "default": "",
+                      "title": "Medium Graphic",
+                      "inputType": "Asset:image",
+                      "validators": [],
+                      "help": "The medium sized image for tablet devices."
+                    },
+                    "mediumAlt": {
+                      "type": "string",
+                      "required": false,
+                      "default": "",
+                      "title": "Medium Alt text",
+                      "inputType": "Text",
+                      "validators": [],
+                      "help": "Alternative text for the medium sized graphic.",
+                      "translatable": true
+                    },
+                    "_smallSrc": {
+                      "type": "string",
+                      "required": false,
+                      "default": "",
+                      "title": "Small Graphic",
+                      "inputType": "Asset:image",
+                      "validators": [],
+                      "help": "The small sized image for mobile devices."
+                    },
+                    "smallAlt": {
+                      "type": "string",
+                      "required": false,
+                      "default": "",
+                      "title": "Small Alt text",
+                      "inputType": "Text",
+                      "validators": [],
+                      "help": "Alternative text for the small sized graphic.",
+                      "translatable": true
+                    }
+                  }
+                },
+                "_gradient": {
+                  "type": "object",
+                  "legend": "Gradient",
+                  "required": false,
+                  "properties": {
+                    "_isEnabled": {
+                      "type": "boolean",
+                      "required": false,
+                      "default": false,
+                      "title": "Is Enabled",
+                      "inputType": "Checkbox",
+                      "validators": []
+                    },
+                    "_type": {
+                      "type": "string",
+                      "required": false,
+                      "default": "Top to Bottom",
+                      "title": "Type",
+                      "inputType": {"type": "Select", "options": ["Bottom Left to Top Right", "Left to Right", "Top Left to Bottom Right", "Top to Bottom", "Radial", "Radial Top", "Radial Bottom", "Radial Left", "Radial Right"]},
+                      "validators": []
+                    },
+                    "_colors": {
+                      "type": "string",
+                      "required": false,
+                      "default": "",
+                      "title": "Colours",
+                      "inputType": "Text",
+                      "validators": [],
+                      "help": "Use a comma separated list of Hex Color Codes, e.g. #ccc, #999"
+                    }
+                  }
+                },
+                "_video": {
+                  "type": "object",
+                  "legend": "Video",
+                  "required": false,
+                  "properties": {
+                    "_isEnabled": {
+                      "type": "boolean",
+                      "required": false,
+                      "default": false,
+                      "title": "Is Enabled",
+                      "inputType": "Checkbox",
+                      "validators": []
+                    },
+                    "_loopEnabled": {
+                      "type": "boolean",
+                      "required": false,
+                      "default": false,
+                      "title": "Loop Video",
+                      "inputType": "Checkbox",
+                      "validators": []
+                    },
+                    "_disableOnMobile": {
+                      "type": "boolean",
+                      "required": false,
+                      "default": false,
+                      "title": "Disable on Mobile",
+                      "inputType": "Checkbox",
+                      "validators": []
+                    },
+                    "_src": {
+                      "type": "string",
+                      "required": false,
+                      "default": "",
+                      "title": "Video Asset",
+                      "inputType": "Asset:video",
+                      "validators": []
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "block": {
+          "type": "object",
+          "properties": {
+            "_background": {
+              "type": "object",
+              "required": false,
+              "legend": "Background",
+              "properties": {
+                "_isEnabled": {
+                  "type": "boolean",
+                  "required": true,
+                  "default": false,
+                  "title": "Is Enabled",
+                  "inputType": "Checkbox",
+                  "validators": [],
+                  "help": "Controls whether the Background extension is enabled or disabled."
+                },
+                "_color": {
+                  "type": "string",
+                  "required": false,
+                  "default": "#fff",
+                  "title": "Background Colour",
+                  "inputType": "ColourPicker",
+                  "validators": []
+                },
+                "_image": {
+                  "type": "object",
+                  "legend": "Image",
+                  "required": false,
+                  "properties": {
+                    "_isEnabled": {
+                      "type": "boolean",
+                      "required": false,
+                      "default": false,
+                      "title": "Is Enabled",
+                      "inputType": "Checkbox",
+                      "validators": []
+                    },
+                    "_position": {
+                      "type": "string",
+                      "required": true,
+                      "default": "top",
+                      "title": "CSS Position Property",
+                      "inputType": {"type": "Select", "options": ["top", "bottom", "center", "left top", "left center", "left bottom", "right top", "right center", "right bottom", "center top", "center center", "center bottom"]},
+                      "validators": [],
+                      "help": "Set the position of the graphic with the pre-defined CSS styles."
+                    },
+                    "_size": {
+                      "type": "string",
+                      "required": true,
+                      "default": "auto",
+                      "title": "CSS Size Property",
+                      "inputType": {"type": "Select", "options": ["auto", "cover"]},
+                      "validators": [],
+                      "help": "Set the size of the graphic with the pre-defined CSS styles."
+                    },
+                    "_repeat": {
+                      "type": "string",
+                      "required": true,
+                      "default": "no-repeat",
+                      "title": "CSS Repeat Property",
+                      "inputType": {"type": "Select", "options": ["no-repeat", "repeat"]},
+                      "validators": [],
+                      "help": "Set the repeat property of the graphic with the pre-defined CSS styles."
+                    },
+                    "_attachment": {
+                      "type": "string",
+                      "required": true,
+                      "default": "scroll",
+                      "title": "CSS Attachement Property",
+                      "inputType": {"type": "Select", "options": ["scroll", "fixed"]},
+                      "validators": [],
+                      "help": "Set the attachment property of the graphic with the pre-defined CSS styles."
+                    },
+                    "_opacity": {
+                      "type": "number",
+                      "required": true,
+                      "default": 1,
+                      "title": "Opacity",
+                      "inputType": {"type": "Select", "options": [1, 0.9, 0.8, 0.7, 0.6, 0.5, 0.4, 0.3, 0.2, 0.1]},
+                      "validators": ["number"]
+                    },
+                    "_largeSrc": {
+                      "type": "string",
+                      "required": false,
+                      "default": "",
+                      "title": "Large Graphic",
+                      "inputType": "Asset:image",
+                      "validators": [],
+                      "help": "The large sized image for desktop devices."
+                    },
+                    "largeAlt": {
+                      "type": "string",
+                      "required": false,
+                      "default": "",
+                      "title": "Large Alt text",
+                      "inputType": "Text",
+                      "validators": [],
+                      "help": "Alternative text for the large sized graphic.",
+                      "translatable": true
+                    },
+                    "_mediumSrc": {
+                      "type": "string",
+                      "required": false,
+                      "default": "",
+                      "title": "Medium Graphic",
+                      "inputType": "Asset:image",
+                      "validators": [],
+                      "help": "The medium sized image for tablet devices."
+                    },
+                    "mediumAlt": {
+                      "type": "string",
+                      "required": false,
+                      "default": "",
+                      "title": "Medium Alt text",
+                      "inputType": "Text",
+                      "validators": [],
+                      "help": "Alternative text for the medium sized graphic.",
+                      "translatable": true
+                    },
+                    "_smallSrc": {
+                      "type": "string",
+                      "required": false,
+                      "default": "",
+                      "title": "Small Graphic",
+                      "inputType": "Asset:image",
+                      "validators": [],
+                      "help": "The small sized image for mobile devices."
+                    },
+                    "smallAlt": {
+                      "type": "string",
+                      "required": false,
+                      "default": "",
+                      "title": "Small Alt text",
+                      "inputType": "Text",
+                      "validators": [],
+                      "help": "Alternative text for the small sized graphic.",
+                      "translatable": true
+                    }
+                  }
+                },
+                "_gradient": {
+                  "type": "object",
+                  "legend": "Gradient",
+                  "required": false,
+                  "properties": {
+                    "_isEnabled": {
+                      "type": "boolean",
+                      "required": false,
+                      "default": false,
+                      "title": "Is Enabled",
+                      "inputType": "Checkbox",
+                      "validators": []
+                    },
+                    "_type": {
+                      "type": "string",
+                      "required": false,
+                      "default": "Top to Bottom",
+                      "title": "Type",
+                      "inputType": {"type": "Select", "options": ["Bottom Left to Top Right", "Left to Right", "Top Left to Bottom Right", "Top to Bottom", "Radial", "Radial Top", "Radial Bottom", "Radial Left", "Radial Right"]},
+                      "validators": []
+                    },
+                    "_colors": {
+                      "type": "string",
+                      "required": false,
+                      "default": "",
+                      "title": "Colours",
+                      "inputType": "Text",
+                      "validators": [],
+                      "help": "Use a comma separated list of Hex Color Codes, e.g. #ccc, #999"
+                    }
+                  }
+                },
+                "_video": {
+                  "type": "object",
+                  "legend": "Video",
+                  "required": false,
+                  "properties": {
+                    "_isEnabled": {
+                      "type": "boolean",
+                      "required": false,
+                      "default": false,
+                      "title": "Is Enabled",
+                      "inputType": "Checkbox",
+                      "validators": []
+                    },
+                    "_loopEnabled": {
+                      "type": "boolean",
+                      "required": false,
+                      "default": false,
+                      "title": "Loop Video",
+                      "inputType": "Checkbox",
+                      "validators": []
+                    },
+                    "_disableOnMobile": {
+                      "type": "boolean",
+                      "required": false,
+                      "default": false,
+                      "title": "Disable on Mobile",
+                      "inputType": "Checkbox",
+                      "validators": []
+                    },
+                    "_src": {
+                      "type": "string",
+                      "required": false,
+                      "default": "",
+                      "title": "Video Asset",
+                      "inputType": "Asset:video",
+                      "validators": []
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "component": {
+          "type": "object"
+        }
+      }
+    }
+  }
+}
